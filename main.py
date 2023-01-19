@@ -16,9 +16,12 @@ class FakeGrabber():
     def userinput(self):
         __WEBHOOK__ = input(" Ingresa tu webhook > ")
         self.send(__WEBHOOK__)
+        Write.Print("Mensaje enviado\n", interval=0.05, hide_cursor=True, color=Colors.white)
 
     def getinfo(self):
         
+        x = Faker()
+
         step1 = "=="
         step1.find("==") != 1
         tokenid = str(randint(000000000000000000, 999999999999999999))
@@ -28,18 +31,17 @@ class FakeGrabber():
         
         ## Fake token
         token = step1+"."+choice(ascii_letters).upper()+''.join(choice(ascii_letters + digits) for _ in range(6))+"."+''.join(choice(ascii_letters + digits) for _ in range(38))
+        
         ## Fake phone
         phone = "+1 "+"("+"".join(str(randint(0, 9)) for _ in range(3)) + ")" + "-" + "".join(str(randint(0, 9)) for _ in range(3))+ "-" + "".join(str(randint(0, 9)) for _ in range(4))
         
         ## Fake Ip
-        faker = Faker()
-        Ipfake = faker.ipv4()
+        ipfake = x.ipv4()
 
         ## Fake Geo
 
-        faker = Faker()
-        latitud = faker.latitude()
-        longitud = faker.longitude()
+        latitud = x.latitude()
+        longitud = x.longitude()
 
         ## Random True or False
 
@@ -47,23 +49,30 @@ class FakeGrabber():
         gay2 = choice([True, True, True, True, True, False])
 
         ## Fake OS
-        fakeos = choice(["Windows", "Linux", "MacOS X"])
+        fakeos = choice(['Windows', 'Mac', 'Linux', 'IOS', 'Android', 'Unknown'])
 
         ## Fake Mac
 
         fakemac = RandMac()
 
-        ## Cookies Found
+        ## Found
         fcookies = randint(1,999)
         fpass = randint(1, 999)
         friends = randint(1, 1000)
         servers = randint(1, 200)
 
-        return fakeos, Ipfake, fakemac, latitud, longitud, gay, gay2, phone, friends, tokenid, fcookies, fpass, servers, token
+        ## email fake
+        f1 = x.first_name()
+        number = randint(0000, 9999)
+        e1 = ['gmail.com', 'yahoo.com', 'hotmail.com']
+        e2 = choice(e1)
+        email = f"{f1}.{number}@{e2}"
+
+        return fakeos, ipfake, fakemac, latitud, longitud, gay, gay2, phone, friends, tokenid, fcookies, fpass, servers, token, email
     def send(self, __WEBHOOK__):
-        fakeos, Ipfake, fakemac, latitud, longitud, gay, gay2, phone, friends, tokenid, fcookies, fpass, servers, token = self.getinfo()
+        fakeos, ipfake, fakemac, latitud, longitud, gay, gay2, phone, friends, tokenid, fcookies, fpass, servers, token, email = self.getinfo()
         
-        embed = {"content": '', 
+        X1 = {"content": '', 
             "embeds": [{  
                 "color": 1051660, 
                 "fields": [{ 
@@ -71,7 +80,7 @@ class FakeGrabber():
                     "value": f"{fakeos}", 
                     "inline": True }, { 
                         "name": "Ip", 
-                        "value": f"{Ipfake}", 
+                        "value": f"{ipfake}", 
                         "inline": True }, { 
                             "name": "Mac", 
                             "value": f"{fakemac}", 
@@ -85,8 +94,8 @@ class FakeGrabber():
                                         "name": "Nitro",
                                           "value": f"{gay}", 
                                           "inline": True }, { 
-                                            "name": "Expire in", 
-                                            "value": f"N/A", 
+                                            "name": "Gmail", 
+                                            "value": f"{email}", 
                                             "inline": True }, { 
                                                 "name": "Phone", 
                                                 "value": f"{phone}", 
@@ -117,8 +126,7 @@ class FakeGrabber():
                                                                                 "username": f"Bipas", 
                                                                                 "avatar_url": f"https://cdn.discordapp.com/attachments/1022628482154512384/1060932284653522964/19ffbb7345edceca0713b862147bc120.png", 
                                                                                 "attachments": [] }
-        post(__WEBHOOK__,json=embed)
+        post(__WEBHOOK__,json=X1)
 
 if __name__ == "__main__":
     FakeGrabber()
-
