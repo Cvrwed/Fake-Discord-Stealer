@@ -4,21 +4,21 @@ from base64 import b64encode
 from time import sleep
 from faker import Faker
 from randmac import RandMac
+from datetime import datetime
+now = datetime.now()
 
 System.Clear()
 Cursor.HideCursor()
 System.Title("Fake Grabber")
 
 x = Faker()
-step1 = "=="
-step1.find("==") != 1
+step1 = b64encode(str(randint(000000000000000000, 999999999999999999)).encode("ascii")).decode("ascii")
 tokenid = str(randint(000000000000000000, 999999999999999999))
-step2 = tokenid.encode("ascii")
-finalstep = b64encode(step2)
-step1 = finalstep.decode("ascii")
-
 ## Fake token
 token = step1+"."+choice(ascii_letters).upper()+''.join(choice(ascii_letters + digits) for _ in range(6))+"."+''.join(choice(ascii_letters + digits) for _ in range(38))
+
+## ?
+vbv = now.strftime("%H:%M")
 
 ## Fake phone
 phone = "+1 "+"("+"".join(str(randint(0, 9)) for _ in range(3)) + ")" + "-" + "".join(str(randint(0, 9)) for _ in range(3))+ "-" + "".join(str(randint(0, 9)) for _ in range(4))
@@ -32,7 +32,7 @@ longitud = x.longitude()
 
 ## Random True or False
 gay = choice([False, False, False, False, False, True])
-gay2 = choice([True, True, True, True, True, False])
+#gay2 = choice([True, True, True, True, True, False])
 
 ## Fake OS
 fakeos = choice(['Windows', 'Mac', 'Linux', 'IOS', 'Unknown'])
@@ -43,7 +43,7 @@ fakemac = RandMac()
 ## Found
 fcookies = randint(1,999)
 fpass = randint(1, 999)
-friends = randint(1, 1000)
+#friends = randint(1, 1000)
 
 ## Random badges
 rarebadge = choice([
@@ -62,10 +62,7 @@ comunbadge = choice([
 
 ## email fake
 f1 = x.first_name()
-number = randint(0000, 9999)
-e1 = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com']
-e2 = choice(e1)
-email = f"{f1}.{number}@{e2}"
+email = f"{f1}.{randint(0000, 9999)}@{choice(['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'])}"
 
 ## Random User
 
@@ -163,7 +160,7 @@ def Discord(webhook):
                 "icon_url": "https://media.tenor.com/noyn9bef3O8AAAAd/zerotwo-dance.gif"
             },
             "footer": {
-                "text": "Fake Grabber · Discord Information",
+                "text": f"Fake Grabber · Discord Information · {vbv}",
                 "icon_url": "https://media.tenor.com/noyn9bef3O8AAAAd/zerotwo-dance.gif"
                 },
             "thumbnail": {}
@@ -209,7 +206,7 @@ def ISystem(webhook):
                 },
                 ],
             "footer": {
-                "text": "Fake Grabber · System Information",
+                "text": f"Fake Grabber · System Information · {vbv}",
                 "icon_url": "https://media.tenor.com/noyn9bef3O8AAAAd/zerotwo-dance.gif"
                 },
             }
@@ -249,7 +246,7 @@ def BrowserD(webhook):
                 },
                 ],
             "footer": {
-                "text": "Fake Grabber · Browser Data",
+                "text": f"Fake Grabber · Browser Data · {vbv}",
                 "icon_url": "https://media.tenor.com/noyn9bef3O8AAAAd/zerotwo-dance.gif"
                 },
             }
@@ -295,7 +292,7 @@ def RobloxC(webhook):
                 },
                 ],
             "footer": {
-                "text": "Fake Grabber · Roblox Data",
+                "text": f"Fake Grabber · Roblox Data · {vbv}",
                 "icon_url": "https://media.tenor.com/noyn9bef3O8AAAAd/zerotwo-dance.gif"
                 },
             }
