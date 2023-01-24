@@ -27,8 +27,7 @@ phone = "+1 "+"("+"".join(str(randint(0, 9)) for _ in range(3)) + ")" + "-" + ""
 ipfake = x.ipv4()
 
 ## Fake Geo
-latitud = x.latitude()
-longitud = x.longitude()
+latitud, longitud = x.latitude(), x.longitude()
 
 ## Random True or False
 gay = choice([False, False, False, False, False, True])
@@ -41,8 +40,7 @@ fakeos = choice(['Windows', 'Mac', 'Linux', 'IOS', 'Unknown'])
 fakemac = RandMac()
 
 ## Found
-fcookies = randint(1,999)
-fpass = randint(1, 999)
+fcookies, fpass = randint(1,999), randint(1, 999)
 #friends = randint(1, 1000)
 
 ## Random badges
@@ -72,41 +70,40 @@ tag = randint(1111, 9999)
 
 ## System
 
-n1 = randint(0, 9) # numbers 
-n2 = randint(00, 99) # 2 numbers 
-n3 = randint(00000, 99999) # 5 numbers 
+n1,n2,n3 = randint(0, 9),randint(00, 99),randint(00000, 99999) # numbers 
 
 l1 = ''.join(SystemRandom().choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ')) # letters 
 l2 = ''.join(SystemRandom().choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(2)) # 2 letters
 l3 = ''.join(SystemRandom().choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(3)) # 3 letters
 l4 = ''.join(SystemRandom().choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(4)) # 4 letters
 
-ram = randint(4, 32)
-disk = randint(1024, 9999)
+ram, disk = randint(4, 32), randint(1024, 9999)
 hwid = f"{n2}{l1}{n2}{l3}-{n2}{l1}{n1}-{n2}{l1}{n1}-{n1}{l1}{n2}-{n1}{l1}{n3}{l2}{n2}{l1}"
 #winkey = f"{l4}{n1}-{l1}{n1}{l3}-{l3}{n2}-{n1}{l1}{n1}{l2}-{n1}{l3}{n1}"
 
 ## Browser Data
 
 rBrowser = choice(["Chrome", "Brave", "Opera", "Firefox", "Safari", "Microsoft Edge"])
-
-Visa = randint(4000000000000000,4999999999999999)
-Mastercard = randint(5000000000000000,5999999999999999)
-Discover = randint(6000000000000000,6999999999999999)
-
-Month = randint(00, 12)
-Year = randint(2023, 2031)
-Cvv = randint(000, 999)
-
-cc = choice([Visa, Mastercard, Discover])
-cc2 = f"|{Month}|{Year}|{Cvv}"
+Visa, Mastercard, Discover = randint(4000000000000000,4999999999999999), randint(5000000000000000,5999999999999999), randint(6000000000000000,6999999999999999)
+Month, Year, Cvv = randint(00, 12), randint(2023, 2031), randint(000, 999)
+cc, cc2 = choice([Visa, Mastercard, Discover]), f"|{Month}|{Year}|{Cvv}"
 
 ## Roblox
 rcookie = "_|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_"+choice(digits)+''.join(choice(ascii_uppercase + digits) for _ in range(744))
 ruser = (choice(get("https://raw.githubusercontent.com/zEncrypte/rblx-usernames/master/names.txt").text.split("\n")))
-robux = randint(0, 99)
-friends = randint(0, 50)
+robux, friends = randint(0, 99), randint(0, 50)
 rpssw = (choice(get("https://gist.githubusercontent.com/cihanmehmet/68abd1a11b3477ebd30eea7ef23183b5/raw/c06ff4cb95e3cc6679d3cd74f24617f498158f9e/password-wordlist.txt").text.split("\n")))
+
+def check(webhook):
+    msg = '"Unknown Webhook"'
+    msg2 = '"Invalid Webhook Token"'
+    info = get(webhook).text
+    if msg in info or 'discord.com/api/webhooks' not in webhook:
+        print(f" {Colors.purple}[{Colors.red}!{Colors.purple}]{Colors.white} Webhook Invalida")
+        exit()
+    elif msg2 in info or 'discord.com/api/webhooks' not in webhook:
+        print(f" {Colors.purple}[{Colors.red}!{Colors.purple}]{Colors.white} Webhook Invalida")
+        exit()
 
 def Discord(webhook):
     Info = {
@@ -304,8 +301,9 @@ def RobloxC(webhook):
 
     post(webhook, json=RobloxCookie)
 
-webhook = input(" Ingresa tu webhook > ")
-sleep(1.5)
+webhook = input(f" {Colors.purple}[{Colors.red}*{Colors.purple}]{Colors.white} Ingresa tu webhook {Colors.red}> {Colors.white}")
+if not check(webhook):
+    sleep(1.5)
 Discord(webhook)
 sleep(1.5)
 ISystem(webhook)
@@ -314,4 +312,4 @@ BrowserD(webhook)
 sleep(1.5)
 RobloxC(webhook)
 
-Write.Print(" Mensaje enviado\n", interval=0.05, hide_cursor=True, color=Colors.white)
+print(f" {Colors.purple}[{Colors.red}*{Colors.purple}]{Colors.white} Mensaje enviado")
