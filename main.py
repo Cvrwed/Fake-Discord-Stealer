@@ -104,7 +104,7 @@ Cvv = randint(000, 999)
 cc = choice([Visa, Mastercard, Discover])
 cc2 = f"|{Month}|{Year}|{Cvv}"
 
-## Minecraft and Roblox
+## Roblox
 rcookie = "_|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_"+choice(digits)+''.join(choice(ascii_uppercase + digits) for _ in range(744))
 ruser = (choice(get("https://raw.githubusercontent.com/zEncrypte/rblx-usernames/master/names.txt").text.split("\n")))
 robux = randint(0, 99)
