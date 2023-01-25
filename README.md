@@ -6,6 +6,8 @@
         
         - The id matches with the token
         
+        - Generate a email random
+        
         - Generate a legitimate username
         
         - Randomly select rare and common badges 
@@ -69,3 +71,13 @@
       
 </details>
 <br>
+
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/72712659/214571076-9b29a2bf-0e03-40e2-b519-f2a5e27dbb5c.png)
+
+![image](https://user-images.githubusercontent.com/72712659/214571124-f06eb1a8-8d6d-4e95-b01f-f27a4e714a5e.png)
+
+![image](https://user-images.githubusercontent.com/72712659/214571185-23c5407d-2c75-40e9-a819-0b45af29760e.png)
+
+![image](https://user-images.githubusercontent.com/72712659/214571245-ee610c1d-38ad-4a69-b04c-d9db9051c6df.png)
