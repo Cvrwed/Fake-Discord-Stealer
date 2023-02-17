@@ -64,7 +64,7 @@ email = f"{f1}.{randint(0000, 9999)}@{choice(['gmail.com', 'yahoo.com', 'hotmail
 
 # Credits to itschasa
 user = (choice(get("https://raw.githubusercontent.com/itschasa/Discord-Scraped/main/names.txt").text.split("\n")))
-tag = randint(1000, 9999)
+tag = randint(0001, 9999)
 
 ## System
 
