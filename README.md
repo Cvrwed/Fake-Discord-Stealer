@@ -19,6 +19,8 @@
     - Generate a random IPv4
 
     - Latitude and longitude 
+
+    - Random badges
         
 </details>
 <br>
