@@ -68,18 +68,52 @@ tag = randint(0001, 9999)
 
 ## System
 
-n1 = randint(0, 9)
-n2 = randint(00, 99)
-n3 = randint(00000, 99999) # numbers 
-
-l1 = ''.join(SystemRandom().choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ')) # letters 
-l2 = ''.join(SystemRandom().choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(2)) # 2 letters
-l3 = ''.join(SystemRandom().choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(3)) # 3 letters
-l4 = ''.join(SystemRandom().choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(4)) # 4 letters
-
 ram = randint(4, 32)
 disk = randint(10, 999)
-hwid = f"{n2}{l1}{n2}{l3}-{n2}{l1}{n1}-{n2}{l1}{n1}-{n1}{l1}{n2}-{n1}{l1}{n3}{l2}{n2}{l1}"
+
+## Hwid Structure
+
+Rls = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+H1 = choice((Rls))
+H2 = choice((Rls))
+H3 = choice((Rls))
+H4 = choice((Rls))
+H5 = choice((Rls))
+H6 = choice((Rls))
+H7 = choice((Rls))
+H8 = choice((Rls))
+H9 = '-'
+H10 = choice((Rls))
+H11 = choice((Rls))
+H12 = choice((Rls))
+H13 = choice((Rls))
+H14 = choice((Rls))
+H15 = '-'
+H16 = choice((Rls))
+H17 = choice((Rls))
+H18 = choice((Rls))
+H19 = choice((Rls))
+H20 = '-'
+H21 = choice((Rls))
+H22 = choice((Rls))
+H23 = choice((Rls))
+H24 = choice((Rls))
+H25 = '-'
+H26 = choice((Rls))
+H27 = choice((Rls))
+H28 = choice((Rls))
+H29 = choice((Rls))
+H30 = choice((Rls))
+H31 = choice((Rls))
+H32 = choice((Rls))
+H33 = choice((Rls))
+H34 = choice((Rls))
+H35 = choice((Rls))
+H36 = choice((Rls))
+H37 = choice((Rls))
+
+phwid = f"{H1}{H2}{H3}{H4}{H5}{H6}{H7}{H8}{H9}{H10}{H11}{H12}{H13}{H14}{H15}{H16}{H17}{H18}{H19}{H20}{H21}{H22}{H23}{H24}{H25}{H26}{H27}{H28}{H29}{H30}{H31}{H32}{H33}{H34}{H35}{H36}{H37}"
+
 #winkey = f"{l4}{n1}-{l1}{n1}{l3}-{l3}{n2}-{n1}{l1}{n1}{l2}-{n1}{l3}{n1}"
 
 ## Browser Data
