@@ -12,11 +12,11 @@
         
     - Randomly select rare and common badges 
         
-    - Generate a random phone (Only US for now)
+    - Generate a random phone (Random countrys)
         
     - Randomly bool True or false (2FA)
         
-    - Generate a random IPv4
+    - Generate a random IPv4 (Only US for now)
 
     - Latitude and longitude 
 
