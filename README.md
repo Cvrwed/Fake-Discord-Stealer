@@ -1,7 +1,7 @@
 # Features
 <br>
 <details>
-    <summary>Fake Discord Data</summary>
+    <summary>Discord Data</summary>
     <ul>
         
     - The id matches with the token
@@ -27,7 +27,7 @@
 
 <br>
 <details>
-    <summary>Fake System Data</summary>
+    <summary>System Data</summary>
     <ul>
         
     - Generate a random OS 
@@ -44,7 +44,7 @@
 <br>
 <br>
 <details>
-    <summary>Fake Browser Data</summary>
+    <summary>Browser Data</summary>
     <ul>
         
     - Randomly select a browser
@@ -60,7 +60,7 @@
 
 <br>
 <details>
-    <summary>Fake Roblox Data</summary>
+    <summary>Roblox Data</summary>
     <ul>
         
     - Generate a legitimate username
